@@ -5,6 +5,11 @@ $database = "epiz_31454080_rifas";
 $username = "epiz_31454080";
 $password = "b367a3rTdTV";
 
+$hostname = "localhost:3306";
+$database = "rifas";
+$username = "localhost";
+$password = "";
+
 try {
     $pdo = new PDO('mysql:host='.$hostname.';dbname='.$dbname, $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
