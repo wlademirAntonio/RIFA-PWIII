@@ -5,7 +5,7 @@ include('../../conexao/conn.php');
 
 $ID = $_REQUEST['ID'];
 
-$sql = "SELECT * FROM TIPO WHERE ID = $ID";
+$sql = "SELECT * FROM VENDEDOR WHERE ID = $ID";
 
 $resultado = $pdo->query($sql);
 

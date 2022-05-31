@@ -15,7 +15,7 @@ if(empty($requestData['NOME'])){
 
     if($operacao == 'insert'){
         try{
-            $stmt = $pdo->prepare('INSERT INTO TIPO (NOME) VALUES (:a)');
+            $stmt = $pdo->prepare('INSERT INTO VENDEDOR (NOME) VALUES (:a)');
             $stmt->execute(array(
                 ':a' => $requestData['NOME']
             ));
@@ -31,7 +31,7 @@ if(empty($requestData['NOME'])){
         }
     } else {
         try{
-            $stmt = $pdo->prepare('UPDATE TIPO SET NOME = :a WHERE ID = :id');
+            $stmt = $pdo->prepare('UPDATE VENDEDOR SET NOME = :a WHERE ID = :id');
             $stmt->execute(array(
                 ':id' => $ID,
                 ':a' => $requestData['NOME']
