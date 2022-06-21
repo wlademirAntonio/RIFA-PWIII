@@ -23,9 +23,11 @@ $(document).ready(function() {
                 if (dado.comprador == "success") {
                     $('.modal-body').load('src/comprador/visao/form-comprador.html', function() {
                         $('#NOME').val(dado.dados.NOME)
+                        $('#CELULAR').val(dado.dados.CELULAR)
                         $('#ID').val(dado.dados.ID)
                     })
                     $('.btn-save').show()
+                    $('.btn-save').removeAttr('data-operation')
                     $('#modal-comprador').modal('show')
                 } else {
                     Swal.fire({ // Inicialização do SweetAlert
