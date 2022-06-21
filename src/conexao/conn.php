@@ -6,7 +6,7 @@ $username = "epiz_31454080";
 $password = "b367a3rTdTV";
 
 $hostname = "localhost:3306";
-$database = "rifas";
+$database = "epiz_31454080_rifas";
 $username = "localhost";
 $password = "";
 
