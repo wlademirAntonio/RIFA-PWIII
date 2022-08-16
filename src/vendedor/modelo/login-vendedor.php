@@ -2,7 +2,7 @@
 
 include ('../../conexao/conn.php');
 
-$sql = $pdo->query("SELECT *, count(ID) as achou FROM VENDEDOR WHERE LOGIN = '" . $_REQUEST['LOGIN']) . "' AND SENHA = '" . md5($_REQUEST['SENHA']) . "'");
+$sql = $pdo->query("SELECT *, count(ID) as achou FROM vendedor WHERE LOGIN = '" . $_REQUEST['LOGIN']) . "' AND SENHA = '" . md5($_REQUEST['SENHA']) . "'";
 
 while ($resultado = $sql->fetch(PDO::FETCH_ASSOC)) {
 

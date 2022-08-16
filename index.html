@@ -15,16 +15,16 @@
     <div class="conteiner">
         <div class="row justify-content-center">
             <h3 class="text-center text-secondary">Login</h3>
-            <div class="col-8 col-sm-6 col-md-2">
-                <form>
+            <div class=" row col-8 col-sm-6 col-md-2">
+                <form id="form-login">
                     <div class="form-group mt-3">
-                        <input type="text" class="form-control" placeholder="Endereço de email">
+                        <input type="text" class="form-control" name="LOGIN" id="LOGIN" placeholder="Nome de Usuário">
                     </div>
                     <div class="form-group mt-3">
-                        <input type="text" class="form-control" placeholder="Senha">
+                        <input type="text" class="form-control" name="SENHA" id="SENHA" placeholder="Senha">
                     </div>
                     <div class="d-grid gap-2 mt-3">
-                        <button class="btn btn-outline-danger" type="submit">Button</button>
+                        <button class="btn btn-outline-danger btn-login" type="submit">Button</button>
                     </div>
                 </form>
             </div>
@@ -33,6 +33,7 @@
 
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="src/vendedor/controle/login-vendedor.js"></script>
 
 </body>
 
