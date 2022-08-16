@@ -4,8 +4,6 @@ $(document).ready(function() {
 
         e.preventDefault()
 
-        // Alterar as informações do modal para apresentação dos dados
-
         $('.modal-title').empty()
         $('.modal-body').empty()
 
@@ -20,20 +18,20 @@ $(document).ready(function() {
             data: ID,
             url: 'src/comprador/modelo/view-comprador.php',
             success: function(dado) {
-                if (dado.comprador == "success") {
+                if (dado.tipo == "success") {
                     $('.modal-body').load('src/comprador/visao/form-comprador.html', function() {
                         $('#NOME').val(dado.dados.NOME)
                         $('#CELULAR').val(dado.dados.CELULAR)
                         $('#ID').val(dado.dados.ID)
                     })
+                    $('.btn-save').removeAttr('data-operation', 'insert')
                     $('.btn-save').show()
-                    $('.btn-save').removeAttr('data-operation')
                     $('#modal-comprador').modal('show')
                 } else {
-                    Swal.fire({ // Inicialização do SweetAlert
-                        title: 'xrifas', // Título da janela SweetAler
-                        text: dado.mensagem, // Mensagem retornada do microserviço
-                        type: dado.comprador, // comprador de retorno [success, info ou error]
+                    Swal.fire({
+                        title: 'TOP-RIFAS',
+                        text: dado.mensagem,
+                        type: dado.tipo,
                         confirmButtonText: 'OK'
                     })
                 }

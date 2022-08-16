@@ -15,9 +15,9 @@ $(document).ready(function() {
             url: 'src/comprador/modelo/save-comprador.php',
             success: function(dados) {
                 Swal.fire({
-                    title: 'xrifas',
+                    title: 'TOP-RIFAS',
                     text: dados.mensagem,
-                    icon: dados.comprador,
+                    icon: dados.tipo,
                     confirmButtonText: 'OK'
                 })
 

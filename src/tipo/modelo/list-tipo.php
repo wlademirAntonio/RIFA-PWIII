@@ -9,7 +9,7 @@ $colunas = $requestData['columns'];
 $sql = "SELECT ID, NOME FROM TIPO WHERE 1=1 ";
 
 $resultado = $pdo->query($sql);
-$qtdeLinhas = $resultado->rowCount();
+$qldeLinhas = $resultado->rowCount();
 
 $filtro = $requestData['search']['value'];
 if( !empty( $filtro ) ){
@@ -31,6 +31,7 @@ $sql .= " ORDER BY $ordem $direcao LIMIT $inicio, $tamanho ";
 $resultado = $pdo->query($sql);
 $dados = array();
 while($row = $resultado->fetch(PDO::FETCH_ASSOC)){
+    //$dados[] = array_map('utf8_encode', $row);
     $dados[] = array_map(null, $row);
 }
 

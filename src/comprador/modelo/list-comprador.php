@@ -6,15 +6,15 @@ $requestData = $_REQUEST;
 
 $colunas = $requestData['columns'];
 
-$sql = "SELECT ID, NOME FROM COMPRADOR WHERE 1=1 ";
+$sql = "SELECT ID, NOME, CELULAR FROM COMPRADOR WHERE 1=1 ";
 
 $resultado = $pdo->query($sql);
-$qtdeLinhas = $resultado->rowCount();
+$qldeLinhas = $resultado->rowCount();
 
 $filtro = $requestData['search']['value'];
 if( !empty( $filtro ) ){
     $sql .= " AND (ID LIKE '$filtro%' ";
-    $sql .= " OR NOME LIKE '$filtro%' ";
+    $sql .= " OR NOME LIKE '$filtro%') ";
     $sql .= " OR CELULAR LIKE '$filtro%') ";
 }
 
@@ -32,6 +32,7 @@ $sql .= " ORDER BY $ordem $direcao LIMIT $inicio, $tamanho ";
 $resultado = $pdo->query($sql);
 $dados = array();
 while($row = $resultado->fetch(PDO::FETCH_ASSOC)){
+    //$dados[] = array_map('utf8_encode', $row);
     $dados[] = array_map(null, $row);
 }
 

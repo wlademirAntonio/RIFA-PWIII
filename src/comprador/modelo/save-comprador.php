@@ -15,9 +15,11 @@ if(empty($requestData['NOME'])){
 
     if($operacao == 'insert'){
         try{
-            $stmt = $pdo->prepare('INSERT INTO COMPRADOR (NOME) VALUES (:a)');
+            $stmt = $pdo->prepare('INSERT INTO COMPRADOR (NOME, CELULAR) VALUES (:a, :b)');
             $stmt->execute(array(
-                ':a' => $requestData['NOME']
+                // ':a' => utf8_decode($requestData['NOME'])
+                ':a' => $requestData['NOME'],
+                ':b' => $requestData['CELULAR']
             ));
             $dados = array(
                 "tipo" => 'success',
@@ -31,10 +33,12 @@ if(empty($requestData['NOME'])){
         }
     } else {
         try{
-            $stmt = $pdo->prepare('UPDATE COMPRADOR SET NOME = :a WHERE ID = :id');
+            $stmt = $pdo->prepare('UPDATE COMPRADOR SET NOME = :a, CELULAR = :b WHERE ID = :id');
             $stmt->execute(array(
                 ':id' => $ID,
-                ':a' => $requestData['NOME']
+                // ':a' => utf8_decode($requestData['NOME'])
+                ':a' => $requestData['NOME'],
+                ':b' => $requestData['CELULAR']
             ));
             $dados = array(
                 "tipo" => 'success',

@@ -17,6 +17,7 @@ if(empty($requestData['NOME'])){
         try{
             $stmt = $pdo->prepare('INSERT INTO TIPO (NOME) VALUES (:a)');
             $stmt->execute(array(
+                // ':a' => utf8_decode($requestData['NOME'])
                 ':a' => $requestData['NOME']
             ));
             $dados = array(
@@ -34,6 +35,7 @@ if(empty($requestData['NOME'])){
             $stmt = $pdo->prepare('UPDATE TIPO SET NOME = :a WHERE ID = :id');
             $stmt->execute(array(
                 ':id' => $ID,
+                // ':a' => utf8_decode($requestData['NOME'])
                 ':a' => $requestData['NOME']
             ));
             $dados = array(

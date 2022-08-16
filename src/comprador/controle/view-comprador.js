@@ -18,7 +18,7 @@ $(document).ready(function() {
             data: ID,
             url: 'src/comprador/modelo/view-comprador.php',
             success: function(dado) {
-                if (dado.comprador == "success") {
+                if (dado.tipo == "success") {
                     $('.modal-body').load('src/comprador/visao/form-comprador.html', function() {
                         $('#NOME').val(dado.dados.NOME)
                         $('#NOME').attr('readonly', 'true')
@@ -29,14 +29,14 @@ $(document).ready(function() {
                     $('#modal-comprador').modal('show')
                 } else {
                     Swal.fire({
-                        title: 'xrifas',
+                        title: 'TOP-RIFAS',
                         text: dado.mensagem,
-                        icon: dado.comprador,
+                        type: dado.tipo,
                         confirmButtonText: 'OK'
                     })
                 }
             }
         })
-    })
 
+    })
 })

@@ -1,4 +1,3 @@
-
 <?php
 
 include('../../conexao/conn.php');
@@ -12,6 +11,7 @@ $resultado = $pdo->query($sql);
 if($resultado){
     $dadosEixo = array();
     while($row = $resultado->fetch(PDO::FETCH_ASSOC)){
+        // $dadosEixo = array_map('utf8_encode', $row);
         $dadosEixo = array_map(null, $row);
     }
     $dados = array(

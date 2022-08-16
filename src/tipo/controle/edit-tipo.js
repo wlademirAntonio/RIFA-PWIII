@@ -4,8 +4,6 @@ $(document).ready(function() {
 
         e.preventDefault()
 
-        // Alterar as informações do modal para apresentação dos dados
-
         $('.modal-title').empty()
         $('.modal-body').empty()
 
@@ -25,13 +23,14 @@ $(document).ready(function() {
                         $('#NOME').val(dado.dados.NOME)
                         $('#ID').val(dado.dados.ID)
                     })
+                    $('.btn-save').removeAttr('data-operation', 'insert')
                     $('.btn-save').show()
                     $('#modal-tipo').modal('show')
                 } else {
-                    Swal.fire({ // Inicialização do SweetAlert
-                        title: 'xrifas', // Título da janela SweetAler
-                        text: dado.mensagem, // Mensagem retornada do microserviço
-                        type: dado.tipo, // Tipo de retorno [success, info ou error]
+                    Swal.fire({
+                        title: 'TOP-RIFAS',
+                        text: dado.mensagem,
+                        type: dado.tipo,
                         confirmButtonText: 'OK'
                     })
                 }

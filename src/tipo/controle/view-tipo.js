@@ -27,14 +27,14 @@ $(document).ready(function() {
                     $('#modal-tipo').modal('show')
                 } else {
                     Swal.fire({
-                        title: 'xrifas',
+                        title: 'TOP-RIFAS',
                         text: dado.mensagem,
-                        icon: dado.tipo,
+                        type: dado.tipo,
                         confirmButtonText: 'OK'
                     })
                 }
             }
         })
-    })
 
+    })
 })

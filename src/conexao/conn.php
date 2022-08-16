@@ -1,18 +1,20 @@
 <?php
 
-$hostname = "sql102.epizy.com";
-$database = "epiz_31454080_rifas";
-$username = "epiz_31454080";
-$password = "b367a3rTdTV";
+// Conexão Online
+// $hostname = "sql102.epizy.com";
+// $dbname = "epiz_31454090_rifas";
+// $username = "epiz_31454090";
+// $password = "qsG94BDEfCk";
 
-$hostname = "localhost:3306";
-$database = "epiz_31454080_rifas";
-$username = "localhost";
+// Conexão Off-line
+$hostname = "localhost";
+$dbname = "rifa";
+$username = "root";
 $password = "";
 
-try {
+try{
     $pdo = new PDO('mysql:host='.$hostname.';dbname='.$dbname, $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
+} catch (PDOException $e){
     echo 'Error: '.$e->getMessage();
 }

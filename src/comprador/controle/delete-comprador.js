@@ -7,7 +7,7 @@ $(document).ready(function() {
         let ID = `ID=${$(this).attr('id')}`
 
         Swal.fire({
-            title: 'e-Rifa',
+            title: 'TOP-RIFAS',
             text: 'Deseja realmente excluir esse registro?',
             icon: 'question',
             showCancelButton: true,
@@ -24,9 +24,9 @@ $(document).ready(function() {
                     url: 'src/comprador/modelo/delete-comprador.php',
                     success: function(dados) {
                         Swal.fire({
-                            title: 'xrifas',
+                            title: 'TOP-RIFAS',
                             text: dados.mensagem,
-                            icon: dados.comprador,
+                            icon: dados.tipo,
                             confirmButtonText: 'OK'
                         })
 

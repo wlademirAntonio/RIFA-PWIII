@@ -15,9 +15,14 @@ if(empty($requestData['NOME'])){
 
     if($operacao == 'insert'){
         try{
-            $stmt = $pdo->prepare('INSERT INTO VENDEDOR (NOME) VALUES (:a)');
+            $stmt = $pdo->prepare('INSERT INTO VENDEDOR (NOME, CELULAR, LOGIN, SENHA, TIPO_ID) VALUES (:a, :b, :c, :d, :e)');
             $stmt->execute(array(
-                ':a' => $requestData['NOME']
+                // ':a' => utf8_decode($requestData['NOME'])
+                ':a' => $requestData['NOME'],
+                ':b' => $requestData['CELULAR'],
+                ':c' => $requestData['LOGIN'],
+                ':d' => md5($requestData['SENHA']),
+                ':e' => $requestData['TIPO_ID']
             ));
             $dados = array(
                 "tipo" => 'success',
@@ -31,10 +36,15 @@ if(empty($requestData['NOME'])){
         }
     } else {
         try{
-            $stmt = $pdo->prepare('UPDATE VENDEDOR SET NOME = :a WHERE ID = :id');
+            $stmt = $pdo->prepare('UPDATE VENDEDOR SET NOME = :a, CELULAR = :b, LOGIN = :c, SENHA = :d, TIPO_ID = :e WHERE ID = :id');
             $stmt->execute(array(
                 ':id' => $ID,
-                ':a' => $requestData['NOME']
+                // ':a' => utf8_decode($requestData['NOME'])
+                ':a' => $requestData['NOME'],
+                ':b' => $requestData['CELULAR'],
+                ':c' => $requestData['LOGIN'],
+                ':d' => md5($requestData['SENHA']),
+                ':e' => $requestData['TIPO_ID']
             ));
             $dados = array(
                 "tipo" => 'success',

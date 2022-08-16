@@ -10,7 +10,7 @@
                             </h4>
                         </div>
                         <div class="col-12 col-md-2">
-                            <button class="btn btn-warning btn-block btn-new">
+                            <button class="btn btn-primary btn-block btn-new">
                                 <i class="fa-solid fa-circle-plus"></i> Adicionar
                             </button>
                         </div>
@@ -18,13 +18,14 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table-houver" id="table-vendedor">
+                        <table class="table table-hover" id="table-vendedor">
                             <thead class="thead">
-                                <th>
+                                <tr>
                                     <th scope="col" class="text-center">ID</th>
                                     <th scope="col" class="text-center">NOME</th>
+                                    <th scope="col" class="text-center">CELULAR</th>
                                     <th scope="col" class="text-center">AÇÕES</th>
-                                </th>
+                                </tr>
                             </thead>
                         </table>
                     </div>
@@ -47,12 +48,13 @@
                 <p>Content</p>
             </div>
             <div class="modal-footer">
-                <button id="close" class="btn btn-secondary"><i class="bx bxs-x-cicle"></i> Fechar</button>
-                <button class="btn btn-secondary btn-primary btn-save"><i class="bx bxs-save"></i> Salvar</button>
+                <button id="close" class="btn btn-secondary"><i class='bx bxs-x-circle'></i> Fechar</button>
+                <button class="btn btn-success btn-primary btn-save"><i class='bx bxs-save' ></i> Salvar</button>
             </div>
         </div>
     </div>
 </div>
+
 
 <script src="src/vendedor/controle/new-vendedor.js"></script>
 <script src="src/vendedor/controle/save-vendedor.js"></script>
