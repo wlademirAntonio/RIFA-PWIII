@@ -17,7 +17,7 @@ $(document).ready(function() {
 
                 if (dados.tipo == 'success') {
 
-                    $(location).attr('href', 'sistem.html')
+                    $(location).attr('href', 'sistema.html')
 
                 } else {
 
