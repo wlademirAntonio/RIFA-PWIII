@@ -7,10 +7,10 @@
 // $password = "qsG94BDEfCk";
 
 // Conexão Off-line
-$hostname = "localhost";
+$hostname = "localhost:3307";
 $dbname = "rifa";
 $username = "root";
-$password = "";
+$password = "root";
 
 try{
     $pdo = new PDO('mysql:host='.$hostname.';dbname='.$dbname, $username, $password);
