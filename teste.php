@@ -17,9 +17,52 @@ endfor;
 
 shuffle($numeros);
 
-while (count($numeros) != 0) {
+while (TRUE) {
 
-    $v1[] = max($numeros);
-    unset(max($numeros));
+    if (count($numeros) != 0) {
+        
+        $v1[] = $numeros[count($numeros) - 1];
+        unset($numeros[count($numeros) - 1]);
+
+    }
+    if (count($numeros) != 0) {
+
+        $v2[] = $numeros[count($numeros) - 1];
+        unset($numeros[count($numeros) - 1]);
+
+    }
+    if (count($numeros) != 0) {
+
+        $v3[] = $numeros[count($numeros) - 1];
+        unset($numeros[count($numeros) - 1]);
+
+    }
+    if (count($numeros) == 0) {
+
+        break;
+
+    }
+
+}
+
+foreach ($v1 as $v) {
+
+    echo $v . ' ';
+
+}
+
+echo '<br><br>';
+
+foreach ($v2 as $v) {
+
+    echo $v . ' ';
+
+}
+
+echo '<br><br>';
+
+foreach ($v3 as $v) {
+
+    echo $v . ' ';
 
 }
